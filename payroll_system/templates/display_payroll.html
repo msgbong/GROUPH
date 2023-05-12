@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}" />
+    <title>Payroll Data</title>
+  </head>
+  <body class="win">
+    <img src="{% static 'images/G10.jpg' %}" alt="avatar" />
+    <table>
+      <thead>
+        <tr>
+          <th>Surname</th>
+          <th>Other Name</th>
+          <th>Staff Type</th>
+          <th>Gross Pay</th>
+          <th>PAYEE</th>
+          <th>Net Pay</th>
+          <th>Timestamp</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for payroll in payroll_data %}
+        <tr>
+          <td>{{ payroll.employee.surname }}</td>
+          <td>{{ payroll.employee.othername }}</td>
+          <td>{{ payroll.employee.staff_type }}</td>
+          {% if payroll.gross_pay %}
+          <td>{{ payroll.gross_pay }}</td>
+          {% else %}
+          <td>N/A</td>
+          {% endif %} {% if payroll.payee %}
+          <td>{{ payroll.payee }}</td>
+          {% else %}
+          <td>N/A</td>
+          {% endif %} {% if payroll.net_pay %}
+          <td>{{ payroll.net_pay }}</td>
+          {% else %}
+          <td>N/A</td>
+          {% endif %}
+          <td>{{ payroll.timestamp }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

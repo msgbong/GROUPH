@@ -1,0 +1,218 @@
+.win {
+  background-color: #4c7fb4;  
+}
+
+
+.body {
+  background-image: url("../images/house.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: rgba(99, 180, 190, 0.5);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  color:rgb(3, 11, 59)
+}
+
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bolder;
+  font-display: unset;
+  color: rgb(189, 17, 17);
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  color:rgb(8, 29, 146)
+}
+
+form button {
+  background-color: #a8a356;
+  color: #044042;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+form button:hover {
+  background-color: #78a9dd;
+}
+
+/* url(../images/cards.jpg); */
+
+/* Increase font size and add background color to buttons */
+.button {
+  font-size: 1.2rem;
+  background-color: #22e943;
+  color: rgb(238, 24, 24);
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+.button:hover {
+  background-color: #c9c900;
+  color: #0f649c;
+  cursor: pointer;
+}
+
+
+/* Add background image to body */
+.body1 {
+  background-image: url("../images/trips.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style the text inside the circle */
+.circle p {
+  color: rgb(6, 12, 1);
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.jj {
+  text-align: center;
+  color: red;
+  font-size: 3rem;
+}
+.jj1 {
+  text-align: center;
+  color: rgb(238, 132, 194);
+  font-size: 2.5rem;
+}
+.w {
+  color: hsl(191, 44%, 83%);
+  font-size: 4rem;
+}
+
+.body2 {
+  background-image: url("../images/cards.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.1;
+}
+
+
+
+body {
+  background-image: url("../images/bench.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1, h2, p, button {
+  text-align: center;
+  color: rgb(133, 67, 255);
+  font-size: 2.5rem;
+}
+
+nav {
+  margin-top: 50px;
+}
+
+nav h2 {
+  font-size: 2rem;
+  color: #d35454;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 20px;
+}
+
+nav button {
+  font-size: 1.5rem;
+  padding: 15px 30px;
+  background-color: #bcd5e6;
+  border: none;
+  border-radius: 5px;
+  color: #056435;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+  background-color: #ec4427;
+}
+
+em {
+  color: #FF4500; /* set the text color to orange red */
+  font-size: 3rem; /* set the font size to 3 rem */
+  background-color: rgb(220, 235, 135); /* set the background color to sky blue */
+}
+
+.f {
+  color: #1aeb9a; /* set the text color to orange red */
+  font-size: 3rem; /* set the font size to 3 rem */
+  background-color: rgb(62, 65, 46); /* set the background color to sky blue */
+}
+
+.wel {
+  color: #e2f819;
+}
+
+.u {
+  background-image: url("../images/lads.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.in {
+  font-size: 2rem;
+  background-color: #22e943;
+  color: rgb(238, 24, 24);
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.in:hover {
+  background-color: #e5e922;
+  color: #fff;
+  font-size: -2rem;
+}

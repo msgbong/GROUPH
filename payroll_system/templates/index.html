@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dash Board</title>
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}" />
+  </head>
+  <body class="body1">
+    <header class="container">
+      <h1 class="jj">
+        Welcome to our website for<br /><br />
+        <em class="w">Institute Payroll <i>!</i> </em>
+      </h1>
+    </header>
+    <p class="jj1">Please choose one of the following options:</p>
+    <button
+      class="button"
+      type="button"
+      onclick="location.href='{% url 'login' %}'"
+    >
+      User Login
+    </button>
+    <br /><br />
+    <button
+      class="button"
+      type="button"
+      onclick="location.href='{% url 'signup' %}'"
+    >
+      User Signup
+    </button>
+    <div class="circle">
+      <br />
+      <p>Group3</p>
+    </div>
+  </body>
+</html>

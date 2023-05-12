@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Signup</title>
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}" />
+  </head>
+  <body class="u">
+    <h1>Signup User</h1>
+    <form action="/payroll_system/templates/login/" method="POST">
+      {% csrf_token %}
+      <div>
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" required />
+      </div>
+      <div>
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" required />
+      </div>
+      <div>
+        <label for="marital_status">Marital Status:</label>
+        <select id="marital_status" name="marital_status" required>
+          <option value="">--Select--</option>
+          <option value="single">Single</option>
+          <option value="married">Married</option>
+          <option value="divorced">Divorced</option>
+        </select>
+      </div>
+      <div>
+        <label for="gender">Gender:</label>
+        <input
+          type="radio"
+          id="gender_male"
+          name="gender"
+          value="male"
+          required
+        />
+        <label for="gender_male">Male</label>
+        <input type="radio" id="gender_female" name="gender" value="female" />
+        <label for="gender_female">Female</label>
+      </div>
+      <div>
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" required></textarea>
+      </div>
+      <div>
+        <label for="nationality">Nationality:</label>
+        <input type="text" id="nationality" name="nationality" required />
+      </div>
+      <div>
+        <label for="staff_type">Staff Type:</label>
+        <input
+          type="radio"
+          id="teaching_staff"
+          name="staff_type"
+          value="teaching"
+          required
+        />
+        <label for="teaching_staff">Teaching Staff</label>
+        <input
+          type="radio"
+          id="non_teaching_staff"
+          name="staff_type"
+          value="non_teaching"
+        />
+        <label for="non_teaching_staff">Non-Teaching Staff</label>
+      </div>
+      <div>
+        <label for="bank_account_number">Bank Account Number:</label>
+        <input
+          type="text"
+          id="bank_account_number"
+          name="bank_account_number"
+          required
+        />
+      </div>
+      <div>
+        <input class="in" type="submit" value="Save🚀Records" />
+        <button
+          class="in"
+          type="button"
+          onclick="location.href='{% url 'login' %}'"
+        >
+          Go To Login🙌
+        </button>
+      </div>
+    </form>
+    <p id="success_message"></p>
+    <script>
+      const form = document.querySelector("form");
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const data = new FormData(form);
+        const request = new Request("", {
+          method: "POST",
+          body: data,
+        });
+        fetch(request)
+          .then((response) => response.json())
+          .then((data) => {
+            document.getElementById("success_message").textContent =
+              "Saved successfully!";
+            form.reset();
+            window.location.href = "/payroll_system/templates/login/";
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      });
+    </script>
+  </body>
+</html>

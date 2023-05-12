@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Institute payroll System</title>
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}" />
+  </head>
+  <body class="body3">
+    <h1 class="f">Welcome to Payroll System Survey!</h1>
+    <br /><br />
+    <h2 class="wel">
+      We are glad to have had interest in our<br />
+      website <br />for the<br />
+      payroll system
+    </h2>
+    <br /><br />
+    <p>
+      <em>Please select the appropriate buttons basing on your interest.</em>
+    </p>
+    <br /><br />
+    <nav>
+      <h2>GROUP3 PRESENTS !❤️😎</h2>
+      <ul>
+        <li>
+          <button onclick="window.location.href='{% url 'display_payroll' %}'">
+            DISPLAY PAYROLL
+          </button>
+        </li>
+        <br /><br />
+        <li>
+          <button onclick="window.location.href='{% url 'compute' %}'">
+            COMPUTE PAYROLL
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>
