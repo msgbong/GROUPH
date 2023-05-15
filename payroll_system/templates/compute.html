@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Compute ... Payroll</title>
+    <title>Institute Payroll System</title>
     <link rel="stylesheet" href="{% static 'CSS/style.css' %}" />
   </head>
   <body>
@@ -101,12 +101,7 @@
 
         <button type="button" onclick="savePayroll()">SAVE</button>
 
-        <button
-          type="button"
-          onclick="location.href='{% url 'display_payroll' %}'"
-        >
-          Continue!
-        </button>
+        <a href="../display_payroll">payroll display</a>
       </form>
 
       <script>

@@ -28,8 +28,8 @@ SECRET_KEY = 'django-insecure-dm&czftw9zllfpf62^dl(yrsceq3qu=1$2s8=mgu6=^gr!n@1+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['msgbong.pythonanywhere.com', '127.0.0.1']
+# django.contrib.static
 
 # Application definition
 
@@ -119,22 +119,43 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+
+# STATICFILES_DIRS = [
+#   # Specify any additional directories for static files here
+#  os.path.join(BASE_DIR, 'static'),
+# ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 LOGIN_REDIRECT_URL = 'welcome'
 
 LOGIN_URL = 'payroll_system:login'
 
 LOGIN_REQUIRED_FOR_ADMIN = True
+
+
+""" import os
+import sys
+
+# assuming your django settings file is at '/home/msgbong/mysite/mysite/settings.py'
+# and your manage.py is is at '/home/msgbong/mysite/manage.py'
+path = '/home/msgbong/Grouph'
+if path not in sys.path:
+    sys.path.append(path)
+
+os.environ['DJANGO_SETTINGS_MODULE'] = 'Institute_Payroll.settings'
+
+# then:
+from django.core.wsgi import get_wsgi_application
+application = get_wsgi_application()
+ """

@@ -2,27 +2,13 @@ from django.shortcuts import render, redirect
 from .forms import SignupForm, LoginForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
-from .models import Payroll, User
+from payroll_system.models import Payroll, User
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.http import HttpResponse
 
 
 def index(request):
     return render(request, 'index.html')
-
-
-@login_required
-def welcome(request):
-    if request.method == 'POST':
-        if 'display_payroll' in request.POST:
-            # redirect to display payroll page
-            return redirect('display_payroll')
-        elif 'compute_payroll' in request.POST:
-            # redirect to compute payroll page
-            return redirect('compute')
-    else:
-        # handle the case where no button is clicked
-        return render(request, 'welcome.html')
 
 
 def signup(request):
@@ -80,7 +66,7 @@ def login(request):
     return render(request, 'login.html', context)
 
 
-@login_required
+# @login_required
 def welcome(request):
     if request.method == 'POST':
         if 'display_payroll' in request.POST:
@@ -92,8 +78,8 @@ def welcome(request):
     return render(request, 'welcome.html')
 
 
-@login_required
-@user_passes_test(lambda u: u.is_superuser)
+# @login_required
+# @user_passes_test(lambda u: u.is_superuser)
 def compute(request):
     if request.method == 'POST':
         staff_type = request.POST.get('staff-type')
@@ -133,8 +119,8 @@ def compute(request):
         return render(request, 'compute.html')
 
 
-@login_required
-@user_passes_test(lambda u: u.is_superuser)
+# @login_required
+# @user_passes_test(lambda u: u.is_superuser)
 def compute_payee(gross_pay):
     if gross_pay <= 30000:
         payee = gross_pay * 0.1
@@ -145,7 +131,7 @@ def compute_payee(gross_pay):
     return payee
 
 
-@login_required
+# @login_required
 def display_payroll(request):
     payroll_data = Payroll.objects.all()
     return render(request, 'display_payroll.html', {'payroll_data': payroll_data})
